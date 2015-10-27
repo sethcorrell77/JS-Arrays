@@ -80,28 +80,27 @@ evenFinder(nums);
 var nums = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 var evens = [];
 var odds = [];
+
 //Write a function called divider that is given three arguments, nums, evens, and odds.
 //Have divider return an Array with the first item in the array being the evens array (all the even values from nums) and the second item in the Array being the odds array(all the odd values from nums).
 
-
-
   //Code Here
 
-
 var divider = function(arr, arr1, arr2) {
-  var newArr = [];
+  var newArr = [arr1 + arr2];
   for (var i = 0; i < arr.length; i++){
     if (arr[i] % 2 === 0) {
-      newArr.push(arr1[i]);
-    }
-    else {
-      newArr.push(arr2[i]);
+      arr1.push(arr[i]);
+    } else {
+      arr2.push(arr[i]);
     }
   }
   return newArr;
 }
 
 divider(nums, evens, odds);
+console.log(evens);
+conosle.log(odds);
 
 //Next Problem
 
@@ -114,6 +113,8 @@ var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 
   //Code Here
 
+function finder() {
+
 
 //Next problem
 
@@ -123,8 +124,11 @@ var str = 'this is my sentence';
 //Write a function called reverse that takes a given str as it's only argument and returns that string after it's been reversed
 
   //Code Here
+function reverse(randoString) {
+  return randoString.split("").reverse().join("");
+}
 
-
+reverse(str);
 //Next Problem
 
 
@@ -144,7 +148,18 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
   //Code Here
 
+  function removeItem(list, item){
+    list.shift();
+    return list;
+  }
+removeItem(myGroceryList, 'chips');
 //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
+
+function addItem(list, item) {
+  list.push(item);
+  return list;
+}
+addItem(myGroceryList, "Jerky");
 //addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
 
 
@@ -157,7 +172,15 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
   //Code Here
 
+function maker() { 
+  var newArr = [];
+  for (var i = 0; i <215; i++) {
+    newArr.push(i);
+  }
+  return newArr;
+}
 
+maker();
 
 //Next Problem
 
@@ -168,8 +191,15 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 
   //Code Here
 
+function addTen(nums) {
+  var newArr = [];
+  for(i in nums) {
+    newArr.push(Number(nums[i]) + 10);
+  }
+  console.log(newArr);
+}
 
-
+addTen(numbers);
 //Next Problem
 
 
@@ -189,6 +219,15 @@ for(var i = 0; i < num2; i++){
 
   //Code Here
 
+function longerArr(arr1, arr2) {
+  if (arr1.length > arr2.length) {
+    return arr1;
+  }  else {
+    return arr2;
+  }
+}
+
+longerArr(arr1, arr2);
 
 /*As a continuation of the previous problem, write another function called 'both'.
   Your 'both' function will be given two arguments, arr1 and arr2 (from the previous example)
@@ -197,8 +236,13 @@ for(var i = 0; i < num2; i++){
 
   //Code Here
   
+function both(arr1, arr2) {
+   var newArr = [arr1 + arr2];
+   return newArr; 
+}
   
-  
+
+both(arr1, arr2);
 
 //NEXT PROBLEM
 
@@ -232,18 +276,25 @@ var colt = {
 };
 
 /*Above you're given an empty array with four objects. Fill the devMountainEmployees
-array with those four objects. After that console.log the length of the Array and make
+array with those four objects. After that console.log the length of the Array and make.
 sure that it's equal to 4. */
 
   //Code Here
+
+devMountainEmployees.push(tyler, cahlan, ryan, colt);
+console.log(devMountainEmployees.length);
 
 /*Now let's say Cahlan has a mental breakdown and has to take a leave of absence to 'find himself'.
 Loop through your devMountainEmployees until you find cahlan, then remove him from the array.*/
 
   //Code Here
 
-
-
+for(var i = 0; i < devMountainEmployees.length; i++) {
+    if(devMountainEmployees[i].name === "Cahlan") {
+      delete devMountainEmployees[i];
+    }
+}
+console.log(devMountainEmployees);
 
 //NEXT PROBLEM
 
@@ -283,6 +334,7 @@ of Data is to have an Array full of objects. */
 //Create an empty array called users.
 
   //Code Here
+var users = [];
 
 /*Now add three user objects to your users array. Each user object should contain the
 following properties. name, email, password, username.*/
@@ -297,6 +349,20 @@ var user1 = {
 
 //Your Code Here
 
+var user2 = {
+    name: "Shakira",
+    email: "shak@pop.com",
+    password: "shakeIt",
+    username: "shugar33"
+}
+
+var user3 = {
+    name: "Santa Claus",
+    email: "saint@claus.com",
+    password: "christmas43",
+    username: "SaintNick"
+}
+
 /*Now you have a very common data structure. Twitter is a good use case.
 It's easy to imagine that your followers list on Twitter is an Array full or objects
 and those objects contain properties about the specific person you follow.*/
@@ -306,6 +372,13 @@ objects until you find Tyler's account (use tylermcginnis33@gmail.com to find hi
 Once you find the particular index he's located in, delete him from the array.*/
 
   //Code Here
+users.push(user1, user2, user3);
 
+for(var i = 0; i < users.length; i++) {
+  if(users[i].email === "tylermcginnis33@gmail.com") {
+    delete users[i];
+  }
+}
+console.log(users);
 //The activity we just did is very much how data works in 'the real world'.
 
