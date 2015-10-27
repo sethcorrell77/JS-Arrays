@@ -5,7 +5,10 @@ var arr = [10,20,30];
 //Create a function named 'first' that is given 'arr' as the argument and  returns the first item in the given array.
 
   //Code Here
+var first = function() {
+  return arr[0];
 
+}
 
 //Next problem
 
@@ -17,6 +20,9 @@ var arr = [40,50,60];
 
   //Code Here
 
+var last = function() {
+  return arr[2];
+}
 
 //Next Problem
 
@@ -26,6 +32,11 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 
   //Code Here
 
+function looper() {
+  for (var i = 0; i < family.length; i++) {
+    alert(family[i]);
+  }
+}
 
 //Next problem
 
@@ -36,6 +47,13 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 
   //Code Here
 
+function reversedLooper() {
+  for (var i = letters.length -1; i >=0; i--) {
+    alert(letters[i]);
+  }
+}
+
+reversedLooper();
 
 //Next Problem
 
@@ -45,7 +63,17 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 
   //Code Here
 
+var evenFinder = function(arr) {
+  var newArr = [];
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] %  2 === 0) {
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
+}
 
+evenFinder(nums);
 //Next problem
 
 
@@ -59,6 +87,21 @@ var odds = [];
 
   //Code Here
 
+
+var divider = function(arr, arr1, arr2) {
+  var newArr = [];
+  for (var i = 0; i < arr.length; i++){
+    if (arr[i] % 2 === 0) {
+      newArr.push(arr1[i]);
+    }
+    else {
+      newArr.push(arr2[i]);
+    }
+  }
+  return newArr;
+}
+
+divider(nums, evens, odds);
 
 //Next Problem
 
